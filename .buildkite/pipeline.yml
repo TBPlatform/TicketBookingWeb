@@ -1,3 +1,5 @@
+env:
+  BUILDKITE_HOOKS_PATH: .
 steps:
   - label: “Forward to backend folder”
     command: cd event-backend
