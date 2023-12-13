@@ -8,7 +8,6 @@ steps:
     plugins:
       - docker-login:
           username: dockerfnc
-          password-env: MY_DOCKER_LOGIN_PASSWORD
       
       # Resolves to https://github.com/my-org/docker-buildkite-plugin
       - docker-compose#v4.16.0:
