@@ -11,7 +11,7 @@ steps:
       
       # Resolves to https://github.com/my-org/docker-buildkite-plugin
       - docker-compose#v4.16.0:
-          build: .
+          build: app
           image-repository: docerfnc/ticketbooking-a-buildkite-test
 
   - label: "Docker Run" 
@@ -21,4 +21,4 @@ steps:
       
       # Resolves to https://github.com/my-org/docker-buildkite-plugin
       - docker-compose#v4.16.0:
-          run: .
+          run: app
