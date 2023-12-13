@@ -1,6 +1,5 @@
 set -eu
 echo '--- :house_with_garden: Setting up the environment'
 
-export DOCKER_USERNAME='docerfnc'
-export MY_DOCKER_LOGIN_PASSWORD='Songyue123'
+export MY_DOCKER_LOGIN_PASSWORD=Songyue123
 
