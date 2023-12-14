@@ -8,11 +8,10 @@ steps:
     plugins:
       - docker-login:
           username: docerfnc
-      
       # Resolves to https://github.com/my-org/docker-buildkite-plugin
       - docker-compose#v4.16.0:
-          build: app
-          image-repository: docerfnc/ticketbooking-a-buildkite-test
+          # build: app
+          # image-repository: docerfnc/ticketbooking-a-buildkite-test
           run: app
           
   # - label: "Docker Run" 
