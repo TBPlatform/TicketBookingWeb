@@ -2,7 +2,8 @@ env:
   BUILDKITE_HOOKS_PATH: .
 steps: 
   - label: "Run FE"
-    command: cd event-app && npm install && npm run build
+    command: 
+      - cd event-app && npm install && npm run build
       - npm install -g serve
       - serve -s build -l 3000
       - sleep 10 # Waits for 5 seconds to ensure the server has started
