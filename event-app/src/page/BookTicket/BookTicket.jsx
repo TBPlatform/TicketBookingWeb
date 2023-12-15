@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useLocation}from 'react';
+import React, { useEffect, useState}from 'react';
 import { useParams, useHistory} from 'react-router-dom';
 import store from '../../component/catche/store';
 

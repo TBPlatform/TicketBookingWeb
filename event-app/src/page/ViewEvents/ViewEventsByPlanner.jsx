@@ -18,8 +18,8 @@ const MockEvents = [];
 function ViewEventsByPlanner() {
   const [events, setEvents] = useState(MockEvents);
   const { plannerEmail } = useParams();
-  const [searchInput, setSearchInput] = useState(''); // State to store the search input
-  const userRole = store.getRole();
+  // const [searchInput, setSearchInput] = useState(''); // State to store the search input
+  // const userRole = store.getRole();
   const token = store.getToken();
   const history = useHistory();
 
@@ -41,7 +41,7 @@ function ViewEventsByPlanner() {
     })
       .then((data) => setEvents(data))
       .catch((error) => console.error('Error fetching events:', error));
-  }, [token]);
+  }, [plannerEmail, token]);
 
   const onClickCancelEvent = async (eventID) => {
     fetch(
@@ -61,7 +61,7 @@ function ViewEventsByPlanner() {
       }
   
       console.log('Event canceled successfully');
-      setEvents(events => events.filter(e => e.id != eventID))
+      setEvents(events => events.filter(e => e.id !== eventID))
     })
     .catch(err => {
       console.error('Failed to cancel event', err);

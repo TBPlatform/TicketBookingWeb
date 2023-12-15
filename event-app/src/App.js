@@ -6,7 +6,7 @@ import CreateVenue from './page/CreateVenue/CreateVenue';
 import ResponsiveAppBar from './component/topBar';
 import ViewVenues from './page/ViewVenues/ViewVenues';
 import CreateEvent from './page/CreateEvent/CreateEvent';
-import ViewEvents from './page/ViewEvents/ViewEvents';
+// import ViewEvents from './page/ViewEvents/ViewEvents';
 import ViewEventsByPlanner from './page/ViewEvents/ViewEventsByPlanner';
 import BookTicket from './page/BookTicket/BookTicket';
 import EditVenue from './page/EditVenue/EditVenue';

@@ -17,7 +17,7 @@ const mockBookings = []
 
 function ViewBookingsByCustomer(props) {
   const [bookings, setBookings] = useState(mockBookings);
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
   const { customerEmail } = useParams();
   const token = store.getToken(); // Get the user's role from local storage
 
@@ -33,7 +33,7 @@ function ViewBookingsByCustomer(props) {
     ).then(res=>res.json())
     .then(res => setBookings(res)
     ).catch(err => console.error('Error retrieving bookings:', err));
-  }, []);
+  }, [customerEmail, token]);
 
   const handleCancelBooking = (bookingID) => {
     fetch(
@@ -45,7 +45,7 @@ function ViewBookingsByCustomer(props) {
         },
       }
     ).then(res => 
-      setBookings(bookings => bookings.filter(b => b.id != bookingID))
+      setBookings(bookings => bookings.filter(b => b.id !== bookingID))
     ).catch(err => console.error('Error deleting booking:', err));
   }
 

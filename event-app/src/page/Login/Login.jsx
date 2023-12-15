@@ -14,7 +14,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [role, setRole] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [error] = useState('');
   const history = useHistory();
 
   const handleChange = (event) => {
@@ -64,6 +64,11 @@ const Login = () => {
       case "planner":
         history.push(`/viewEvents/byPlanner/${store.getEmail()}`)
         break;
+      default:
+      // Add a default action here
+      // For example, redirect to a default page or log an error
+      console.log("Unknown role");
+      history.push("/viewUsers");
     }
     window.location.reload();
   }

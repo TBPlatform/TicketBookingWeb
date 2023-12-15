@@ -31,7 +31,9 @@ function ResponsiveAppBar() {
   const history = useHistory();
   const token = store.getToken();
 
-  useEffect(() => setRole(store.getRole()), [store]);
+  // useEffect(() => setRole(store.getRole()), [store]);
+  useEffect(() => setRole(store.getRole()), []);
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);

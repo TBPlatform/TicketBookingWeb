@@ -25,7 +25,7 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 function ViewBookingsByEvent(props) {
   const [bookings, setBookings] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
   const { eventID } = useParams();
   const token = store.getToken(); // Get the user's role from local storage
 
@@ -41,7 +41,7 @@ function ViewBookingsByEvent(props) {
     ).then(res =>res.json()
     ).then(data => setBookings(data))
     .catch(err => console.error('Error retrieving bookings:', err));
-  }, []);
+  }, [eventID, token]);
 
   const handleCancelBooking = (bookingID) => {
     fetch(
@@ -53,7 +53,7 @@ function ViewBookingsByEvent(props) {
         },
       }
     ).then(res => 
-      setBookings(bookings => bookings.filter(b => b.id != bookingID))
+      setBookings(bookings => bookings.filter(b => b.id !== bookingID))
     ).catch(err => console.error('Error deleting booking:', err));
   }
 

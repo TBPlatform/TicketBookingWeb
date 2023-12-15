@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import { TextField, Button, Card, CardContent, CardHeader, Container, Grid, Typography,
 } from '@mui/material';
 import { useHistory } from 'react-router-dom';
 import './ViewEvents.css';
 import store from '../../component/catche/store';
 
-const MockEvents = [
+// const MockEvents = [
 
-  {
-    id: "1",
-    name: 'Event1',
-    startDate: '2023-10-25 12:00',
-    endDate: '2023-10-25 15:00',
-    planners: ["p1@email.com", "p2@email.com"],
-    venue: {
-      id: "v1",
-      name: "vname",
-      address: "vaddress",
-      sections: [ { id: "s1", type: "seated", capacity: 100, price: 20, ticketLeft: 20 } ]
-    },
-    artist: "artist1",
-    description: 'This is Event 1',
-  },
-];
+//   {
+//     id: "1",
+//     name: 'Event1',
+//     startDate: '2023-10-25 12:00',
+//     endDate: '2023-10-25 15:00',
+//     planners: ["p1@email.com", "p2@email.com"],
+//     venue: {
+//       id: "v1",
+//       name: "vname",
+//       address: "vaddress",
+//       sections: [ { id: "s1", type: "seated", capacity: 100, price: 20, ticketLeft: 20 } ]
+//     },
+//     artist: "artist1",
+//     description: 'This is Event 1',
+//   },
+// ];
 
 function SearchEvents() {
   const [events, setEvents] = useState([]);

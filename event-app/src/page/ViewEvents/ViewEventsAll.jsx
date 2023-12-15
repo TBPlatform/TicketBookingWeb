@@ -17,9 +17,9 @@ const MockEvents = [];
 
 function ViewEventsAll() {
   const [events, setEvents] = useState(MockEvents);
-  const { plannerEmail } = useParams();
-  const [searchInput, setSearchInput] = useState(''); // State to store the search input
-  const userRole = store.getRole();
+  // const { plannerEmail } = useParams();
+  // const [searchInput, setSearchInput] = useState(''); // State to store the search input
+  // const userRole = store.getRole();
   const token = store.getToken();
   const history = useHistory();
 
@@ -37,25 +37,25 @@ function ViewEventsAll() {
       .catch((error) => console.error('Error fetching events:', error));
   }, [token]);
 
-  const onClickCancelEvent = async (eventID) => {
-    fetch(
-      `${process.env.REACT_APP_API_URL}/delete-event?id=${eventID}`, {
-      method: 'DELETE',
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
-      },
-    }).then(res => {
-      console.log('Event canceled successfully');
-      setEvents(events => events.filter(e => e.id != eventID))
-    }).catch(err => {
-      console.error('Failed to cancel event', err);
-    });
-  };
+  // const onClickCancelEvent = async (eventID) => {
+  //   fetch(
+  //     `${process.env.REACT_APP_API_URL}/delete-event?id=${eventID}`, {
+  //     method: 'DELETE',
+  //     headers: {
+  //       'Authorization': `Bearer ${token}`,
+  //       'Content-Type': 'application/json',
+  //     },
+  //   }).then(res => {
+  //     console.log('Event canceled successfully');
+  //     setEvents(events => events.filter(e => e.id !== eventID))
+  //   }).catch(err => {
+  //     console.error('Failed to cancel event', err);
+  //   });
+  // };
 
-  const onClickEditEvent = (eID) => {
-    history.push(`/EditEvent/${eID}`);
-  }
+  // const onClickEditEvent = (eID) => {
+  //   history.push(`/EditEvent/${eID}`);
+  // }
 
   const onClickViewBookings = (eID) => history.push(`/viewBookings/byEvent/${eID}`);
 

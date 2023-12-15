@@ -60,7 +60,7 @@ function CreateEvent() {
         console.log(data)
       })
       .catch((error) => console.error('Error fetching venues:', error));
-  }, []);
+  }, [token]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
