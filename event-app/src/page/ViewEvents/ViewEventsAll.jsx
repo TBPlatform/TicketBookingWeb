@@ -11,7 +11,7 @@ import {
 import { useHistory } from 'react-router-dom';
 import './ViewEvents.css';
 import store from '../../component/catche/store';
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+// import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 const MockEvents = [];
 
