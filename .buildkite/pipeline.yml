@@ -18,8 +18,6 @@ steps:
     command: cd event-backend
           
   - label: "Docker Test" 
-    # agents:
-    #   queue: be
     plugins:
       - docker-login:
           username: docerfnc
@@ -29,17 +27,11 @@ steps:
           # image-repository: docerfnc/ticketbooking-a-buildkite-test
           run: app
 
-    - label: "US Plugin"
-      plugins:
+  - label: ":book: User story validation"
+    key: us-validation
+    plugins:
       - ssh://git@github.com/MotivationalModelling/buildkite-plugin-user-story-validator.git#v0.0.1:
           propertyone: $PROPERTY_ONE
           propertytwo: $PROPERTY_TWO
           propertythree: $PROPERTY_THREE
-  # - label: "Docker Run" 
-  #   plugins:
-  #     - docker-login:
-  #         username: docerfnc
-      
-  #     # Resolves to https://github.com/my-org/docker-buildkite-plugin
-  #     - docker-compose#v4.16.0:
-  #         run: app
+
