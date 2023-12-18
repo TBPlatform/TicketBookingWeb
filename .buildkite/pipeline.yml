@@ -29,6 +29,8 @@ steps:
           run: app
 
   - label: ":book: User story validation"
+    agents:
+      queue: outer
     key: us-validation
     plugins:
       - ssh://git@github.com/MotivationalModelling/buildkite-plugin-user-story-validator.git#v0.0.1:
