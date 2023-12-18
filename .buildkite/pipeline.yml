@@ -1,7 +1,5 @@
 env:
   BUILDKITE_HOOKS_PATH: .
-agents:
-    queue: be
 steps: 
   - label: "Run FE"
     command: 
