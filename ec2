@@ -1,2 +1,3 @@
 docker login
+ec2 hello
 git login
