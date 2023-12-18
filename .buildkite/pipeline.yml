@@ -1,5 +1,7 @@
 env:
   BUILDKITE_HOOKS_PATH: .
+agents:
+    queue: be
 steps: 
   - label: "Run FE"
     command: 
@@ -9,16 +11,14 @@ steps:
       - sleep 10 # Waits for 10 seconds to ensure the server has started
       - curl --fail http://localhost:3000
     agents:
-      queue: "fe"
+      queue: fe
 
   - label: “Forward to backend folder”
     command: cd event-backend
-    agents:
-      queue: "be"
-      
+          
   - label: "Docker Test" 
-    agents:
-      queue: "be"
+    # agents:
+    #   queue: be
     plugins:
       - docker-login:
           username: docerfnc
