@@ -25,7 +25,7 @@ steps:
       # Resolves to https://github.com/my-org/docker-buildkite-plugin
       - docker-compose#v4.16.0:
           build: app
-          image-repository: docerfnc/ticketbooking-a-buildkite-test
+          image-repository: docerfnc/ticketbooking-a-buildkite-test:initial-deployment-app-build-72
           run: app
 
   - label: ":book: User story validation"
