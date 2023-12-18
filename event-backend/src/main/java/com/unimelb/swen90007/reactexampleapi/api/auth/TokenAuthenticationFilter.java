@@ -21,8 +21,8 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
 
         String requestURI = request.getRequestURI();
 
-        HttpServletResponse res = (HttpServletResponse) response;
-        response.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+//        HttpServletResponse res = (HttpServletResponse) response;
+//        response.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
 
         // Bypass the filter for login, signup, and the main page
         if (requestURI.endsWith("/login") || requestURI.endsWith("/sign-up") || requestURI.equals("/")) {

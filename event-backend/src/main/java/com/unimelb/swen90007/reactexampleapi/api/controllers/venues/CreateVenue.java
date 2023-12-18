@@ -34,7 +34,7 @@ public class CreateVenue extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("application/json");
-        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
         System.out.println("CreateVenue POST method");
         PrintWriter writer = response.getWriter();
 
