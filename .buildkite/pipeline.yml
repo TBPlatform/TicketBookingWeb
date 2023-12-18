@@ -1,8 +1,8 @@
 env:
   BUILDKITE_HOOKS_PATH: .
-  PROPERTY_ONE: "one"
-  PROPERTY_TWO: "two"
-  PROPERTY_THREE: "three"
+  PROPERTY_ONE: "admin@email.com" #username
+  PROPERTY_TWO: "admin" #password
+  # PROPERTY_THREE: "three"
 steps: 
   - label: "Run FE"
     command: 
@@ -34,5 +34,5 @@ steps:
       - ssh://git@github.com/MotivationalModelling/buildkite-plugin-user-story-validator.git#v0.0.1:
           propertyone: $PROPERTY_ONE
           propertytwo: $PROPERTY_TWO
-          propertythree: $PROPERTY_THREE
+          # propertythree: $PROPERTY_THREE
 
