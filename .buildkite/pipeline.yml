@@ -34,7 +34,7 @@ steps:
     key: us-validation
     plugins:
       # - ssh://git@github.com/MotivationalModelling/buildkite-plugin-user-story-validator.git#v0.0.1:
-        - ssh://git@github.com:TBPlatform/validator.git#v0.0.1
+        - ssh://git@github.com:TBPlatform/validator.git
           propertyone: $PROPERTY_ONE
           propertytwo: $PROPERTY_TWO
           # propertythree: $PROPERTY_THREE
