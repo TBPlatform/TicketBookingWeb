@@ -33,15 +33,18 @@ echo "Validation successful. Proceeding with further processing..."
 for (( i = 0; i < USER_STORIES_COUNT; i++ )); do
     needed=$(jq --raw-output ".user_stories[$i].needed" "$USER_STORIES_FILE")
     score=$(jq --raw-output ".user_stories[$i].score" "$RESULT_FILE")
+    content=$(jq --raw-output ".user_stories[$i].content" "$RESULT_FILE")
 
     if [ "$score" -ge "$needed" ]; then
         result="success"
     else
         result="error"
+        buildkite-agent annotate "$content" --style 'warning' --context 'US assessed result'
     fi
 
     # Update the result in the RESULT_FILE
     jq ".user_stories[$i] += {\"result\": \"$result\"}" "$RESULT_FILE" > temp.json && mv temp.json "$RESULT_FILE"
 done
 
-echo "Updated results stored in ${RESULT_FILE}"
+echo "Updated results stored in ${RESULT_FILE}:"
+cat "$RESULT_FILE"
