@@ -43,6 +43,8 @@ steps:
     command: chmod +x pre-command.sh && ./pre-command.sh
 
   - label: "mimic command to generate result"
+    agents:
+       queue: local
     command: chmod +x command.sh && ./command.sh
 
   - label: "Annotation Test"
