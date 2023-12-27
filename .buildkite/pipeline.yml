@@ -27,7 +27,7 @@ steps:
            # build: app
            # image-repository: docerfnc/ticketbooking-a-buildkite-test
            run: app
-       - https://github.com/yuesong1/BKPlugin.git
+        - https://github.com/yuesong1/BKPlugin.git
        
 
       
