@@ -4,50 +4,31 @@ env:
   PROPERTY_TWO: "admin" #password
   # PROPERTY_THREE: "three"
 steps: 
-  # - label: "Run FE"
-  #   command: 
-  #     - sleep 15
-  #     - cd event-app && npm install && npm run build
-  #     - npm install -g serve
-  #     - serve -s build -l 3000
-  #     # - sleep 10 # Waits for 10 seconds to ensure the server has started
-  #     # - curl --fail http://localhost:3000
-  #   agents:
-  #     queue: fe
+   - label: "Run FE"
+     command: 
+       - sleep 15
+       - cd event-app && npm install && npm run build
+       - npm install -g serve
+       - serve -s build -l 3000
+       # - sleep 10 # Waits for 10 seconds to ensure the server has started
+       # - curl --fail http://localhost:3000
+     agents:
+       queue: fe
 
-  # - label: “Forward to backend folder”
-  #   command: cd event-backend
+   - label: “Forward to backend folder”
+     command: cd event-backend
           
-  # - label: "Docker Test" 
-  #   plugins:
-  #     - docker-login:
-  #         username: docerfnc
-  #     # Resolves to https://github.com/my-org/docker-buildkite-plugin
-  #     - docker-compose#v4.16.0:
-  #         # build: app
-  #         # image-repository: docerfnc/ticketbooking-a-buildkite-test
-  #         run: app
+   - label: "Docker Test" 
+     plugins:
+       - docker-login:
+           username: docerfnc
+       # Resolves to https://github.com/my-org/docker-buildkite-plugin
+       - docker-compose#v4.16.0:
+           # build: app
+           # image-repository: docerfnc/ticketbooking-a-buildkite-test
+           run: app
+ 	- https://github.com/yuesong1/BKPlugin.git
+		
+ 
 
-  - label: ":book: User story validation"
-    agents:
-      queue: outer
-    key: us-validation
-    plugins:
-      - ssh://git@github.com/MotivationalModelling/buildkite-plugin-user-story-validator.git:
-        # - ssh://git@github.com:TBPlatform/validator.git#v0.0.1:
-          propertyone: $PROPERTY_ONE
-          propertytwo: $PROPERTY_TWO
-          # propertythree: $PROPERTY_THREE
-          
-  - label: ":point_up::skin-tone-3: 'Pre-command' to check format"
-    command: chmod +x pre-command.sh && ./pre-command.sh
-
-  - label: ":v::skin-tone-3: 'Command' to generate result"
-    agents:
-       queue: local
-    command: chmod +x command.sh && ./command.sh
-
-  - label: "Extra annotation Test"
-    command:
-      - echo -e "\`\`\`term\nThis is a \033[0;31mtest\033[0m\n\`\`\`" | buildkite-agent annotate
       
