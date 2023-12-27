@@ -38,4 +38,14 @@ steps:
           propertyone: $PROPERTY_ONE
           propertytwo: $PROPERTY_TWO
           # propertythree: $PROPERTY_THREE
+          
+  - label: “mimic pre-command to check format”
+    command: chmod +x pre-command.sh && ./pre-command.sh
 
+  - label: "mimic command to generate result"
+    command: chmod +x command.sh && ./command.sh
+
+  - label: "Annotation Test"
+    command:
+      - echo -e "\`\`\`term\nThis is a \033[0;31mtest\033[0m\n\`\`\`" | buildkite-agent annotate
+      
