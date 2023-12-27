@@ -8,6 +8,7 @@ RESULT_FILE="result.json"
 # Function to clear result file and exit with error
 exit_with_error() {
     echo "$1" >&2
+    buildkite-agent annotate "$$1" --style 'error' --context "Assessed result checking"
     > "$RESULT_FILE" # Clear the result file
     exit 1
 }
@@ -39,7 +40,7 @@ for (( i = 0; i < USER_STORIES_COUNT; i++ )); do
         result="success"
     else
         result="error"
-        buildkite-agent annotate "$content" --style 'warning' --context 'US assessed result' --append
+        buildkite-agent annotate "$content" --style 'warning' --context "US $i assessed result" --append
     fi
 
     # Update the result in the RESULT_FILE
