@@ -39,7 +39,7 @@ for (( i = 0; i < USER_STORIES_COUNT; i++ )); do
         result="success"
     else
         result="error"
-        buildkite-agent annotate "$content" --style 'warning' --context 'US assessed result'
+        buildkite-agent annotate "$content" --style 'warning' --context 'US assessed result' --append
     fi
 
     # Update the result in the RESULT_FILE
