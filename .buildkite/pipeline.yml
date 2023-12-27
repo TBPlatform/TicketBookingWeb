@@ -18,15 +18,15 @@ steps:
   # - label: “Forward to backend folder”
   #   command: cd event-backend
           
-  - label: "Docker Test" 
-    plugins:
-      - docker-login:
-          username: docerfnc
-      # Resolves to https://github.com/my-org/docker-buildkite-plugin
-      - docker-compose#v4.16.0:
-          # build: app
-          # image-repository: docerfnc/ticketbooking-a-buildkite-test
-          run: app
+  # - label: "Docker Test" 
+  #   plugins:
+  #     - docker-login:
+  #         username: docerfnc
+  #     # Resolves to https://github.com/my-org/docker-buildkite-plugin
+  #     - docker-compose#v4.16.0:
+  #         # build: app
+  #         # image-repository: docerfnc/ticketbooking-a-buildkite-test
+  #         run: app
 
   - label: ":book: User story validation"
     agents:
