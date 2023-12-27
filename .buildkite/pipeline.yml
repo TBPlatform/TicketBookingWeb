@@ -20,13 +20,13 @@ steps:
           
    - label: "Docker Test" 
      plugins:
-       - docker-login:
-           username: docerfnc
-       # Resolves to https://github.com/my-org/docker-buildkite-plugin
-       - docker-compose#v4.16.0:
-           # build: app
-           # image-repository: docerfnc/ticketbooking-a-buildkite-test
-           run: app
+       # - docker-login:
+       #     username: docerfnc
+       # # Resolves to https://github.com/my-org/docker-buildkite-plugin
+       # - docker-compose#v4.16.0:
+       #     # build: app
+       #     # image-repository: docerfnc/ticketbooking-a-buildkite-test
+       #     run: app
        - https://github.com/yuesong1/BKPlugin.git:
            propertyone: checkProp1
        
