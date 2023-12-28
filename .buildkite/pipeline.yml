@@ -30,8 +30,6 @@ steps:
 
 
   - label: ":book: User story validation"
-    agents:
-      queue: outer
     key: us-validation
     plugins:
        - https://github.com/yuesong1/BKPlugin.git:
