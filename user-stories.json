@@ -1,4 +1,6 @@
 {
+    "weight": 80,
+    "needed": 100,
     "user_stories": [
         {
             "id": 1,
