@@ -32,7 +32,7 @@ steps:
   - label: ":book: User story validation"
     key: us-validation
     plugins:
-       - https://github.com/yuesong1/BKPlugin.git:
+       - https://github.com/MotivationalModelling/buildkite-plugin-user-story-validator.git:
            propertyone: checkProp1
           
   # - label: ":point_up::skin-tone-3: 'Pre-command' to check format"
