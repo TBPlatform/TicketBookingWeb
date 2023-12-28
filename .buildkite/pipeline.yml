@@ -36,6 +36,7 @@ steps:
     plugins:
        - https://github.com/yuesong1/BKPlugin.git:
            propertyone: checkProp1
+	   user-stories-json-directory: ./
           
   # - label: ":point_up::skin-tone-3: 'Pre-command' to check format"
   #   command: chmod +x pre-command.sh && ./pre-command.sh
