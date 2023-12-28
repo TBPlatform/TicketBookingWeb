@@ -1,0 +1,19 @@
+{
+  "user_stories": [
+    {
+      "id": 1,
+      "content": "As a user, I want to be able to register an account so that I can have a personal account.",
+      "score": 70
+    },
+    {
+      "id": 2,
+      "content": "As an admin, I need to manage user accounts to ensure user data is accurate.",
+      "score": 80
+    },
+    {
+      "id": 3,
+      "content": "As a customer, I want to be able to search for products by keywords so that I can find what I am looking for faster.",
+      "score": 50
+    }
+  ]
+}
