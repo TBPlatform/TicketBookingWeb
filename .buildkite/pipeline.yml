@@ -33,7 +33,6 @@ steps:
     key: us-validation
     plugins:
       - ssh://git@github.com:MotivationalModelling/buildkite-plugin-user-story-validator.git:
-        	propertyone: checkProp1
       	  user-stories-dir: ./user-stories
           
   # - label: ":point_up::skin-tone-3: 'Pre-command' to check format"
