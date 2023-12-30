@@ -34,9 +34,8 @@ steps:
     plugins:
       - ssh://git@github.com:MotivationalModelling/buildkite-plugin-user-story-validator.git:
       #  - https://github.com/yuesong1/BKPlugin.git:
-          configuration:
-            propertyone: checkProp1
-	          user-stories-dir: ./user-stories
+          propertyone: checkProp1
+	        user-stories-dir: ./user-stories
           
   # - label: ":point_up::skin-tone-3: 'Pre-command' to check format"
   #   command: chmod +x pre-command.sh && ./pre-command.sh
