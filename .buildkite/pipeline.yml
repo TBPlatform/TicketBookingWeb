@@ -32,8 +32,10 @@ steps:
   - label: ":book: User story validation"
     key: us-validation
     plugins:
-      - ssh://git@github.com:MotivationalModelling/buildkite-plugin-user-story-validator.git:
-      	  user-stories-dir: /user-stories
+      - ssh://git@github.com/MotivationalModelling/buildkite-plugin-user-story-validator.git:
+        # - ssh://git@github.com:TBPlatform/validator.git#v0.0.1:
+          propertyone: $PROPERTY_ONE
+          user-stories-dir: ./user-stories
           
   # - label: ":point_up::skin-tone-3: 'Pre-command' to check format"
   #   command: chmod +x pre-command.sh && ./pre-command.sh
