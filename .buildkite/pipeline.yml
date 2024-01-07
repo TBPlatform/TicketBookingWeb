@@ -47,12 +47,12 @@ steps:
   #   agents:
   #     queue: local
 
-  - input: "pre-checkout the modified US"
-      agents:
-        queue: local
-      fields:
-        - text: "US Number:"
-          key: "us"
-  - label: "Pre-checkout script"
-    command: chmod +x pre-checkout.sh && ./pre-checkout.sh
+    - input: "pre-checkout the modified US"
+        agents:
+          queue: local
+        fields:
+          - text: "US Number:"
+            key: "us"
+    - label: "Pre-checkout script"
+      command: chmod +x pre-checkout.sh && ./pre-checkout.sh
       
