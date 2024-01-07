@@ -32,7 +32,7 @@ steps:
   - label: ":book: User story validation"
     key: us-validation
     plugins:
-      - ssh://git@github.com/MotivationalModelling/buildkite-plugin-user-story-validator.git:
+      - ssh://git@github.com/MotivationalModelling/buildkite-plugin-user-story-validator.git#v.1.0.0:
         # - ssh://git@github.com:TBPlatform/validator.git#v0.0.1:
           propertyone: $PROPERTY_ONE
           user-stories-dir: ./user-stories
