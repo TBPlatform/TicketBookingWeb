@@ -10,7 +10,7 @@ echo "Received IDs: $ID_LIST"
 # Validate that ID_LIST contains only numbers and commas
 if ! [[ $ID_LIST =~ ^[0-9,]+$ ]]; then
     echo "Error: ID list must contain only numbers separated by commas."
-    buildkite-agent annotate "Failed: Invalid pre-checkout checking." --style 'error' --context 'user-stories-checking'
+    buildkite-agent annotate "Failed: Incorrect input User Story Number. Only with ID seperated by comma." --style 'error' --context 'user-stories-checking'
     exit 1
 fi
 
@@ -39,7 +39,7 @@ done
 # Check for unmatched IDs
 if [ ${#UNMATCHED_IDS[@]} -ne 0 ]; then
     echo "Error: The following IDs did not match any user stories: ${UNMATCHED_IDS[*]}"
-    buildkite-agent annotate "Failed: Invalid pre-checkout checking." --style 'error' --context 'user-stories-checking'
+    buildkite-agent annotate "Failed: Invalid input ID." --style 'error' --context 'user-stories-checking'
     exit 1
 fi
 
@@ -51,5 +51,7 @@ echo "$USER_STORIES" | jq --argjson stories "$FILTERED_STORIES_JSON" '.user_stor
 
 echo "Filtered user stories stored in $RESULT_FILE: "
 cat "$RESULT_FILE"
+
+buildkite-agent annotate "Success: Valid input ID of User Story." --style 'success' --context 'user-stories-checking'
 
 sleep 5
