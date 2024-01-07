@@ -3,20 +3,12 @@
     {
       "id": 1,
       "content": "As a user, I want to be able to register an account so that I can have a personal account.",
-      "score": "58",
-      "result": "success"
+      "score": "1"
     },
     {
       "id": 2,
       "content": "As an admin, I need to manage user accounts to ensure user data is accurate.",
-      "score": "91",
-      "result": "success"
-    },
-    {
-      "id": 3,
-      "content": "As a customer, I want to be able to search for products by keywords so that I can find what I am looking for faster.",
-      "score": "70",
-      "result": "success"
+      "score": "96"
     }
   ]
 }
