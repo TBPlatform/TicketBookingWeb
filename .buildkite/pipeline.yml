@@ -39,15 +39,20 @@ steps:
           propertytwo: $PROPERTY_TWO
           # propertythree: $PROPERTY_THREE
           
-  - label: ":point_up::skin-tone-3: 'Pre-command' to check format"
-    command: chmod +x pre-command.sh && ./pre-command.sh
+  # - label: ":point_up::skin-tone-3: 'Pre-command' to check format"
+  #   command: chmod +x pre-command.sh && ./pre-command.sh
 
-  - label: ":v::skin-tone-3: 'Command' to generate result"
-    command: chmod +x command.sh && ./command.sh
-    agents:
-      queue: local
+  # - label: ":v::skin-tone-3: 'Command' to generate result"
+  #   command: chmod +x command.sh && ./command.sh
+  #   agents:
+  #     queue: local
 
-  - label: "Extra annotation Test"
-    command:
-      - echo -e "\`\`\`term\nThis is a \033[0;31mtest\033[0m\n\`\`\`" | buildkite-agent annotate
+  - input: "pre-checkout the modified US"
+      agents:
+        queue: local
+      fields:
+        - text: "US Number:"
+          key: "us"
+  - label: "Pre-checkout script"
+    command: chmod +x pre-checkout.sh && ./pre-checkout.sh
       
