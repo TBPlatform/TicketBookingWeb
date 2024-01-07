@@ -24,8 +24,8 @@ steps:
       queue: local
 
   - input: "pre-checkout the modified US"
-    agents:
-      queue: local
+    # agents:
+    #   queue: local
     fields:
       - text: "US Number:"
         key: "us"
