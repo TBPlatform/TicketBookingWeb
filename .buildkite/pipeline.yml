@@ -4,30 +4,6 @@ env:
   PROPERTY_TWO: "user-stories.json" #password
   # PROPERTY_THREE: "three"
 steps: 
-  # - label: "Run FE"
-  #   command: 
-  #     - sleep 15
-  #     - cd event-app && npm install && npm run build
-  #     - npm install -g serve
-  #     - serve -s build -l 3000
-  #     # - sleep 10 # Waits for 10 seconds to ensure the server has started
-  #     # - curl --fail http://localhost:3000
-  #   agents:
-  #     queue: fe
-
-  # - label: “Forward to backend folder”
-  #   command: cd event-backend
-          
-  # - label: "Docker Test" 
-  #   plugins:
-  #     - docker-login:
-  #         username: docerfnc
-  #     # Resolves to https://github.com/my-org/docker-buildkite-plugin
-  #     - docker-compose#v4.16.0:
-  #         # build: app
-  #         # image-repository: docerfnc/ticketbooking-a-buildkite-test
-  #         run: app
-
   - label: ":book: User story validation"
     agents:
       queue: outer
@@ -39,20 +15,20 @@ steps:
           propertytwo: $PROPERTY_TWO
           # propertythree: $PROPERTY_THREE
           
-  # - label: ":point_up::skin-tone-3: 'Pre-command' to check format"
-  #   command: chmod +x pre-command.sh && ./pre-command.sh
+  - label: ":point_up::skin-tone-3: 'Pre-command' to check format"
+    command: chmod +x pre-command.sh && ./pre-command.sh
 
-  # - label: ":v::skin-tone-3: 'Command' to generate result"
-  #   command: chmod +x command.sh && ./command.sh
-  #   agents:
-  #     queue: local
+  - label: ":v::skin-tone-3: 'Command' to generate result"
+    command: chmod +x command.sh && ./command.sh
+    agents:
+      queue: local
 
-    - input: "pre-checkout the modified US"
-        agents:
-          queue: local
-        fields:
-          - text: "US Number:"
-            key: "us"
-    - label: "Pre-checkout script"
-      command: chmod +x pre-checkout.sh && ./pre-checkout.sh
+  - input: "pre-checkout the modified US"
+    agents:
+      queue: local
+    fields:
+      - text: "US Number:"
+        key: "us"
+  - label: "Pre-checkout script"
+    command: chmod +x pre-checkout.sh && ./pre-checkout.sh
       
