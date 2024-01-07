@@ -30,5 +30,5 @@ steps:
       - text: "US Number:"
         key: "us"
   - label: "Pre-checkout script"
-    command: chmod +x pre-checkout.sh && ./pre-checkout.sh
+    command: pre-checkout.sh
       
