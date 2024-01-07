@@ -3,6 +3,8 @@ env:
   PROPERTY_ONE: "user-stories.json" #username
   PROPERTY_TWO: "user-stories.json" #password
   # PROPERTY_THREE: "three"
+agents:
+  queue: local
 steps: 
   - label: ":book: User story validation"
     agents:
@@ -17,18 +19,18 @@ steps:
           
   - label: ":point_up::skin-tone-3: 'Pre-command' to check format"
     command: chmod +x pre-command.sh && ./pre-command.sh
-
-  - label: ":v::skin-tone-3: 'Command' to generate result"
-    command: chmod +x command.sh && ./command.sh
-    agents:
-      queue: local
-
+    
   - input: "pre-checkout the modified US"
-    # agents:
-    #   queue: local
     fields:
       - text: "US Number:"
         key: "us"
-  - label: "Pre-checkout script"
-    command: pre-checkout.sh
+  - label: ":v::skin-tone-3: Checkout and Command"
+    command: ./pre-checkout.sh && ./command.sh
+             # chmod +x command.sh && ./command.sh
+
+  # - label: ":v::skin-tone-3: 'Command' to generate result"
+  #   command: chmod +x command.sh && ./command.sh
+
+
+
       
