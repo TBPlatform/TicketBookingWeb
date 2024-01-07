@@ -26,7 +26,7 @@ steps:
     command: pre-checkout.sh
 
   - label: ":v::skin-tone-3: 'Command' to generate result"
-    command: command.sh
+    command: chmod +x command.sh && ./command.sh
 
 
 
