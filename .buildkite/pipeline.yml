@@ -23,7 +23,7 @@ steps:
       - text: "US Number:"
         key: "us"
   - label: ":v::skin-tone-3: Checkout and Command"
-    command: pre-checkout.sh
+    command: ./pre-checkout.sh && ./command.sh
              # chmod +x command.sh && ./command.sh
 
   # - label: ":v::skin-tone-3: 'Command' to generate result"
