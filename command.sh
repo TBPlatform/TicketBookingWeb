@@ -4,7 +4,7 @@ set -euo pipefail
 
 # API endpoint and JSON file. Note that it is a mock server api
 API_ENDPOINT="http://localhost:3001/testapi"
-USER_STORIES_FILE="user-stories.json"
+USER_STORIES_FILE="testing.json"
 RESULT_FILE="result.json"
 
 # Function to clear result file and exit with error
