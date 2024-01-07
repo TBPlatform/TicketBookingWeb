@@ -17,18 +17,17 @@ steps:
           
   - label: ":point_up::skin-tone-3: 'Pre-command' to check format"
     command: chmod +x pre-command.sh && ./pre-command.sh
-
-  - label: ":v::skin-tone-3: 'Command' to generate result"
-    command: chmod +x command.sh && ./command.sh
-    agents:
-      queue: local
-
+    
   - input: "pre-checkout the modified US"
-    # agents:
-    #   queue: local
     fields:
       - text: "US Number:"
         key: "us"
   - label: "Pre-checkout script"
     command: pre-checkout.sh
+
+  - label: ":v::skin-tone-3: 'Command' to generate result"
+    command: command.sh
+
+
+
       
