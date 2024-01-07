@@ -52,6 +52,6 @@ echo "$USER_STORIES" | jq --argjson stories "$FILTERED_STORIES_JSON" '.user_stor
 echo "Filtered user stories stored in $RESULT_FILE: "
 cat "$RESULT_FILE"
 
-buildkite-agent annotate "Success: Valid input ID of User Story." --style 'success' --context 'user-stories-checking'
+buildkite-agent annotate "Success: Valid input ID of User Story." --style 'success' --context 'ID-checking'
 
 sleep 5
