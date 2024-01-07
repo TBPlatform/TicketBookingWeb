@@ -1,14 +1,6 @@
 #!/bin/bash
 
-# Function to check if a number exists in an array
-contains() {
-    local n=$1
-    shift
-    for item; do
-        [[ "$item" == "$n" ]] && return 0
-    done
-    return 1
-}
+sleep 10
 
 # Get the comma-separated list of IDs
 ID_LIST=$(buildkite-agent meta-data get us)
@@ -25,12 +17,13 @@ echo "[]" > testing.json # Initialize testing.json with an empty array
 
 for id in "${ids[@]}"; do
     # Extract the user story with the matching ID and append to testing.json
-    USER_STORY=$(echo $USER_STORIES | jq '.[] | select(.id == '"$id"')')
+    USER_STORY=$(echo "$USER_STORIES" | jq --arg id "$id" '.user_stories[] | select(.id == ($id | tonumber))')
     if [ ! -z "$USER_STORY" ]; then
         # Append to testing.json
-        jq -s '.[0] + [.[1]]' testing.json <(echo $USER_STORY) > temp.json && mv temp.json testing.json
+        jq -s '.[0] + [.[1]]' testing.json <(echo "$USER_STORY") > temp.json && mv temp.json testing.json
     fi
 done
 
 echo "Filtered user stories stored in testing.json"
+
 sleep 5
