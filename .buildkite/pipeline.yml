@@ -3,6 +3,8 @@ env:
   PROPERTY_ONE: "user-stories.json" #username
   PROPERTY_TWO: "user-stories.json" #password
   # PROPERTY_THREE: "three"
+agent:
+  queue: local
 steps: 
   - label: ":book: User story validation"
     agents:
