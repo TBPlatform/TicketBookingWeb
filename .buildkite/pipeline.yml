@@ -1,6 +1,6 @@
 env:
   BUILDKITE_HOOKS_PATH: .
-  PROPERTY_ONE: "USER" #username
+  PROPERTY_ONE: "DEV" #username
   PROPERTY_TWO: "1,2,3" #password
   # PROPERTY_THREE: "three"
 agents:
