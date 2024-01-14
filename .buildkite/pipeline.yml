@@ -35,7 +35,7 @@ steps:
   # - label: ":v::skin-tone-3: 'Command' to generate result"
   #   command: chmod +x command.sh && ./command.sh
   - label: ":v::skin-tone-3:"
-    command: buildkite-agent pipeline upload .buildkite/input.yaml
+    command: buildkite-agent pipeline upload input.yaml
 
 
       
