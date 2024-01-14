@@ -1,7 +1,7 @@
 env:
   BUILDKITE_HOOKS_PATH: .
-  PROPERTY_ONE: "user-stories.json" #username
-  PROPERTY_TWO: "user-stories.json" #password
+  PROPERTY_ONE: "USER" #username
+  PROPERTY_TWO: "1,2,3" #password
   # PROPERTY_THREE: "three"
 agents:
   queue: local
