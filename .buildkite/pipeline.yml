@@ -1,6 +1,6 @@
 env:
   BUILDKITE_HOOKS_PATH: .
-  PROPERTY_ONE: "UNIT" # Mode config
+  PROPERTY_ONE: "INT" # Mode config
   PROPERTY_TWO: "" # IDs for testing
   # PROPERTY_THREE: "three"
 agents:
