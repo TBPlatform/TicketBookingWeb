@@ -1,13 +1,14 @@
 env:
   BUILDKITE_HOOKS_PATH: .
-  PROPERTY_ONE: "INT" # Mode config
+  PROPERTY_ONE: "UNIT" # Mode config
   PROPERTY_TWO: "" # IDs for testing
   # PROPERTY_THREE: "three"
 agents:
   queue: local
 steps: 
-  # - label: ":v::skin-tone-3:"
-  #   command: buildkite-agent pipeline upload input.yaml
+  - label: ":v::skin-tone-3:"
+    command: buildkite-agent pipeline upload input.yaml
+    if: $PROPERTY_ONE !~ /INT/
     
   - label: ":book: User story validation"
     # agents:
