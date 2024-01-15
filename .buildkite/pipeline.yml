@@ -9,9 +9,9 @@ steps:
   - label: ":v::skin-tone-3: Current Plugin Mode"
     command: "echo \"Current mode is: ${PROPERTY_ONE}\""
     
-  - label: ":v::skin-tone-3"
-    command: buildkite-agent pipeline upload input.yaml
-    if: build.env(BUILDKITE_PROPERTYONE) != /INT/
+  #- label: ":v::skin-tone-3"
+   # command: buildkite-agent pipeline upload input.yaml
+    #if: build.env(BUILDKITE_PROPERTYONE) != /INT/
     
   - label: ":book: User story validation"
     # agents:
