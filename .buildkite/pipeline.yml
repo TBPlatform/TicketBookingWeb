@@ -8,7 +8,7 @@ agents:
 steps: 
   - label: ":v::skin-tone-3:"
     command: buildkite-agent pipeline upload input.yaml
-    if: build.env(PROPERTY_ONE) != /INT/
+    if: build.env(BUILDKITE_PLUGIN_BUILDKITE_PLUGIN_USER_STORY_VALIDATOR_GIT_PROPERTYONE) != /INT/
     
   - label: ":book: User story validation"
     # agents:
