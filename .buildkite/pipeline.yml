@@ -11,7 +11,8 @@ steps:
     
   - label: ":v::skin-tone-4"
     command: buildkite-agent pipeline upload input.yaml
-    if: build.message !~ /Current mode is: INT/
+    #if: build.message !~ /Current mode is: INT/
+    if: build.env("PROPERTY_ONE") == "UNIT"
     
   - label: ":book: User story validation"
     # agents:
