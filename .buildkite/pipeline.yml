@@ -1,6 +1,6 @@
 env:
   BUILDKITE_HOOKS_PATH: .
-  PROPERTY_ONE: "INT" # Mode config
+  PROPERTY_ONE: "UNIT" # Mode config
   PROPERTY_TWO: "" # IDs for testing
   # PROPERTY_THREE: "three"
 agents:
@@ -9,10 +9,10 @@ steps:
   - label: ":v::skin-tone-3: Current Plugin Mode"
     command: "echo \"Current mode is: ${PROPERTY_ONE}\""
     
-  - label: ":v::skin-tone-4"
-    command: buildkite-agent pipeline upload input.yaml
-    #if: build.message !~ /Current mode is: INT/
-    if: build.env("PROPERTY_ONE") == "UNIT"
+  # - label: ":v::skin-tone-4"
+  #   command: buildkite-agent pipeline upload input.yaml
+  #   #if: build.message !~ /Current mode is: INT/
+  #   if: build.env("PROPERTY_ONE") == "UNIT"
     
   - label: ":book: User story validation"
     # agents:
