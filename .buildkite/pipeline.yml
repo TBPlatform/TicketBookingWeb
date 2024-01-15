@@ -10,8 +10,8 @@ steps:
     command: buildkite-agent pipeline upload input.yaml
     
   - label: ":book: User story validation"
-    # agents:
-    #   queue: outer
+    agents:
+      queue: outer
     key: us-validation
     plugins:
       - ssh://git@github.com/MotivationalModelling/buildkite-plugin-user-story-validator.git:
