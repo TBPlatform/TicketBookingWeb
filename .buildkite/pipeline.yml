@@ -1,7 +1,7 @@
 env:
   BUILDKITE_HOOKS_PATH: .
   PROPERTY_ONE: "DEV" # Mode config
-  PROPERTY_TWO: "1,2,3" # IDs for testing
+  PROPERTY_TWO: "" # IDs for testing
   # PROPERTY_THREE: "three"
 agents:
   queue: local
