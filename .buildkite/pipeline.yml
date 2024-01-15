@@ -6,8 +6,8 @@ env:
 agents:
   queue: local
 steps: 
-  - label: ":v::skin-tone-3:"
-    command: buildkite-agent pipeline upload input.yaml
+  # - label: ":v::skin-tone-3:"
+  #   command: buildkite-agent pipeline upload input.yaml
     
   - label: ":book: User story validation"
     agents:
