@@ -21,7 +21,7 @@ steps:
     plugins:
       - ssh://git@github.com/MotivationalModelling/buildkite-plugin-user-story-validator.git:
         # - ssh://git@github.com:TBPlatform/validator.git#v0.0.1:
-          user-stories-dir: ./
+          user-stories-dir: ""
           propertyone: $PROPERTY_ONE
           propertytwo: $PROPERTY_TWO
           # propertythree: $PROPERTY_THREE
