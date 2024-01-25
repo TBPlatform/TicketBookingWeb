@@ -10,8 +10,6 @@ steps:
     command: "echo \"Current mode is: ${PROPERTY_ONE}\""
     
   - label: ":book: User story validation"
-    # agents:
-    #   queue: outer
     key: us-validation
     plugins:
       - ssh://git@github.com/MotivationalModelling/buildkite-plugin-user-story-validator.git:
