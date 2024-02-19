@@ -7,7 +7,7 @@ agents:
   queue: local
 steps: 
   - label: ":v::skin-tone-3: Current Plugin Mode"
-    command: "echo \"Current mode is: ${PROPERTY_ONE}\""
+    command: "echo \"Current mode is: ${VALIDATION_MODE}\""
     
   - label: ":book: User story validation"
     key: us-validation
