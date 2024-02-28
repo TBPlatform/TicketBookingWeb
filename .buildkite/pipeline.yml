@@ -18,6 +18,7 @@ steps:
           validation-mode: $VALIDATION_MODE
           propertytwo: $PROPERTY_TWO
           # propertythree: $PROPERTY_THREE
+    depends_on: "block"
           
   # - label: ":point_up::skin-tone-3: 'Pre-command' to check format"
   #   command: chmod +x pre-command.sh && ./pre-command.sh
