@@ -53,7 +53,36 @@ steps:
               </tr>
             </tbody>
           </table>
-    
+          
+      - select: Append
+        hint: "Append to the body of an existing annotation?"
+        key: append
+        default: append
+        options:
+          - label: 'Yes'
+            value: append
+          - label: 'No'
+            value: no-append
+
+      - select: Style
+        key: style
+        required: false
+        options:
+          - label: ✏️ Default
+            value: default
+          - label: ℹ️ Information
+            value: info
+          - label: ⚠️ Warning
+            value: warning
+          - label: 🚫 Error
+            value: error
+          - label: ✅ Success
+            value: success
+
+  - label: 👀
+    command: |
+      buildkite-agent meta-data get body | buildkite-agent annotate --style "$(buildkite-agent meta-data get style)" $([[ $(buildkite-agent meta-data get append) == 'append' ]] && echo '--append'); env ANNOTATE_LABEL="Update" buildkite-agent pipeline upload
+
   - label: ":book: User story validation"
     key: us-validation
     plugins:
