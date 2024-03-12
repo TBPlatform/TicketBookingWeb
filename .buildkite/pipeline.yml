@@ -7,7 +7,9 @@ agents:
   queue: local
 steps: 
   - label: 👀
-    command: buildkite-agent annotate --style 'info' --body_html '<h4>VENUS Feedback</h4>
+    command: buildkite-agent annotate --style 'info'
+    default: |
+          <h4>VENUS Feedback</h4>
           <dl class="flex flex-wrap mxn1">
             <div class="m1">
               <dt>New Files in PR</dt>
@@ -47,7 +49,7 @@ steps:
                 <td>xx</td>
               </tr>
             </tbody>
-          </table>'
+          </table>
 
   - label: ":book: User story validation"
     key: us-validation
