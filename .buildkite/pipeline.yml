@@ -6,50 +6,6 @@ env:
 agents:
   queue: local
 steps: 
-  - label: 👀
-    command: buildkite-agent annotate --style 'info'
-    default: |
-          <h4>VENUS Feedback</h4>
-          <dl class="flex flex-wrap mxn1">
-            <div class="m1">
-              <dt>New Files in PR</dt>
-              <dd>
-                <big><big>88</big></big>%<br>
-                115 of 131 lines<br>
-              </dd>
-            </div>
-            <div class="m1">
-              <dt>Files Changed in PR</dt>
-              <dd>
-                <big><big>89</big></big>%<br>
-                332 of 372 lines
-              </dd>
-            </div>
-            <div class="m1">
-              <dt>All Files</dt>
-              <dd>
-                <big><big>90</big></big>%<br>
-                22,998 of 25,484 lines
-              </dd>
-            </div>
-          </dl>
-          <h4>User Story Validation</h4>
-          <table>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Score(Required Score)</th>
-                <th>Risk/Problem</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>baz</td>
-                <td>bim</td>
-                <td>xx</td>
-              </tr>
-            </tbody>
-          </table>
 
   - label: ":book: User story validation"
     key: us-validation
