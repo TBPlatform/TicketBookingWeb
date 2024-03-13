@@ -1,7 +1,7 @@
 env:
   BUILDKITE_HOOKS_PATH: .
   VALIDATION_MODE: "INT" # Mode config
-  PROPERTY_TWO: "" # IDs for testing
+  PROPERTY_TWO: "?" # IDs for testing
   # PROPERTY_THREE: "three"
 agents:
   queue: local
