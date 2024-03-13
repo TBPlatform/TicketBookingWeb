@@ -1,7 +1,7 @@
 {
     "weight": 80,
     "needed": 100,
-    "modified": "1,2,3",
+    "modified": "?",
     "user_stories": [
         {
             "id": 1,
