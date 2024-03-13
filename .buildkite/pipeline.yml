@@ -6,7 +6,6 @@ env:
 agents:
   queue: local
 steps: 
-
   - label: ":book: User story validation"
     key: us-validation
     plugins:
