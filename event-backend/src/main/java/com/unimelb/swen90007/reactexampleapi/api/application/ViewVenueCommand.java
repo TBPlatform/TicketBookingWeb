@@ -20,14 +20,14 @@ public class ViewVenueCommand extends BusinessTransactionCommand{
         try {
             startNewBusinessTransaction();
             String venueId = getReq().getParameter("id");
-            LockManager lock = ReadWriteLockManager.getInstance();
-            if (lock.acquireReadLock(venueId, AppSessionManager.getSession().getId())) {
+//            LockManager lock = ReadWriteLockManager.getInstance();
+//            if (lock.acquireReadLock(venueId, AppSessionManager.getSession().getId())) {
                 Venue venue = VenueLogic.viewOneVenue(venueId);
                 System.out.println("--------test acquire read lock command " + venue);
                 getReq().getSession().setAttribute("venue", venue);
-            } else {
-                throw new LockFailureException(" Failed to acquire read lock for venue");
-            }
+//            } else {
+//                throw new LockFailureException(" Failed to acquire read lock for venue");
+//            }
 
             UnitOfWork.getCurrent().commit();
         }catch (SQLException e){

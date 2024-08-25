@@ -25,15 +25,15 @@ public class UpdateVenueCommand extends BusinessTransactionCommand {
         try {
             startNewBusinessTransaction();
             String venueId = getReq().getParameter("id");
-            LockManager lock = ReadWriteLockManager.getInstance();
-            if (lock.acquireWriteLock(venueId, AppSessionManager.getSession().getId())) {
+//            LockManager lock = ReadWriteLockManager.getInstance();
+//            if (lock.acquireWriteLock(venueId, AppSessionManager.getSession().getId())) {
                 Venue venue = (Venue) MapperRegistry.getInstance().getMapper(Venue.class).
                         find(new Key(UUID.fromString(venueId)));
                 System.out.println("--------test acquire lock command " + venue);
                 getReq().getSession().setAttribute("venue", venue);
-            } else {
-                throw new LockFailureException(" Failed to acquire write lock for venue");
-            }
+//            } else {
+//                throw new LockFailureException(" Failed to acquire write lock for venue");
+//            }
 
             UnitOfWork.getCurrent().commit();
         }catch (SQLException e){

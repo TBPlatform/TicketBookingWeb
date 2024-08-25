@@ -27,7 +27,7 @@ public class SavedVenueCommand extends BusinessTransactionCommand {
             Venue venue = VenueLogic.updateVenue(getReq());
             System.out.println("-----test release lock command " + venue);
 //            MapperRegistry.getInstance().getMapper(Venue.class).update(venue);
-            ReadWriteLockManager.getInstance().releaseWriteLock(venue.getId().toString());
+//            ReadWriteLockManager.getInstance().releaseWriteLock(venue.getId().toString());
             DBUtil.getConnection().commit();
 //            getReq().getSession().setAttribute("newVenue", venue);
 //        forward("/customerSaved.jsp");

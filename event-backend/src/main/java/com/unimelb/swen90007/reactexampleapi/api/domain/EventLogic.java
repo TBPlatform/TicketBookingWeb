@@ -107,9 +107,9 @@ public class EventLogic {
         pstmt.setString(1, venue.getId().toString());
         ResultSet rs = pstmt.executeQuery();
 
-        if (rs.next() && rs.getInt("version") != venue.getVersion()) {
-            throw new OptimisticLockingException("Venue version mismatch. Another operation may have booked the venue.");
-        }
+//        if (rs.next() && rs.getInt("version") != venue.getVersion()) {
+//            throw new OptimisticLockingException("Venue version mismatch. Another operation may have booked the venue.");
+//        }
 
         // Check venue availability based on events
         List<Event> vEvents = mapper.findByVenue(venue.getId());
@@ -130,9 +130,9 @@ public class EventLogic {
         pstmt.setString(1, venue.getId().toString());
         ResultSet rs = pstmt.executeQuery();
 
-        if (rs.next() && rs.getInt("version") != venue.getVersion()) {
-            throw new OptimisticLockingException("Venue version mismatch. Another operation may have booked the venue.");
-        }
+//        if (rs.next() && rs.getInt("version") != venue.getVersion()) {
+//            throw new OptimisticLockingException("Venue version mismatch. Another operation may have booked the venue.");
+//        }
 
         // Check venue availability based on events
         List<Event> vEvents = mapper.findByVenue(venue.getId());

@@ -20,7 +20,7 @@ public class ReleaseAllVenueCommand extends BusinessTransactionCommand{
 //        MapperRegistry.getInstance().getMapper(Venue.class).update(venue);
 //            Venue venue = VenueLogic.updateVenue(getReq());
             System.out.println("-----test release all read lock command " + venue);
-            ReadWriteLockManager.getInstance().releaseReadAllLock();
+//            ReadWriteLockManager.getInstance().releaseReadAllLock();
             UnitOfWork.getCurrent().commit();
         }catch (SQLException e){
             DBUtil.getConnection().rollback();

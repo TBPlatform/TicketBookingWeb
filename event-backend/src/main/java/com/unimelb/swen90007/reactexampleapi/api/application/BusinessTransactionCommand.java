@@ -41,8 +41,8 @@ public abstract class BusinessTransactionCommand implements Command{
                 httpSession.getId(), getReq().getRemoteUser(), new IdentityHashMap()); // what is this???
         AppSessionManager.setSession(appSession);
         httpSession.setAttribute(APP_SESSION, appSession);
-        httpSession.setAttribute(LOCK_REMOVER,
-                new LockRemover(appSession.getId()));
+//        httpSession.setAttribute(LOCK_REMOVER,
+//                new LockRemover(appSession.getId()));
     }
     protected void continueBusinessTransaction() {
         HttpSession httpSession = getReq().getSession(true);

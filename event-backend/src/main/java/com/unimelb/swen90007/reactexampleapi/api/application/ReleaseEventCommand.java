@@ -25,7 +25,7 @@ public class ReleaseEventCommand extends BusinessTransactionCommand{
             Event event = logic.createEvent(getReq());
             getReq().getSession().setAttribute("event", event);
 //            System.out.println("-----test release read lock command " + venue);
-            ReadWriteLockManager.getInstance().releaseReadAllLock();
+//            ReadWriteLockManager.getInstance().releaseReadAllLock();
             DBUtil.getConnection().commit();
         }catch (SQLException e){
             DBUtil.getConnection().rollback();

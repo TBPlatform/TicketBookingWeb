@@ -19,14 +19,14 @@ public class ViewAllVenueCommand extends BusinessTransactionCommand{
         try {
             startNewBusinessTransaction();
             String venueId = UUID.randomUUID().toString();
-            ReadWriteLockManager lock = ReadWriteLockManager.getInstance();
-            if (lock.acquireReadAllLock(venueId, AppSessionManager.getSession().getId())) {
+//            ReadWriteLockManager lock = ReadWriteLockManager.getInstance();
+//            if (lock.acquireReadAllLock(venueId, AppSessionManager.getSession().getId())) {
                 List venues = VenueLogic.viewAllVenue();
                 System.out.println("--------test acquire read all lock command " + venues);
                 getReq().getSession().setAttribute("venue", venues);
-            } else {
-                throw new LockFailureException(" Failed to acquire read all lock for venue");
-            }
+//            } else {
+//                throw new LockFailureException(" Failed to acquire read all lock for venue");
+//            }
             UnitOfWork.getCurrent().commit();
         } catch (SQLException e) {
             DBUtil.getConnection().rollback();
