@@ -1,64 +1,45 @@
-# MusicBandTeam - Online Event Booking Application
+# Online Event Booking Application:ticket:
 
 ## Introduction
 
-Welcome to the MusicBandTeam's online event booking application repository. Developed by passionate students from the University of Melbourne, this platform aims to redefine how music enthusiasts in Australia book live events. Inspired by the likes of Ticketek, we're here to make the event booking process efficient and hassle-free.
+Welcome to the MusicBandTeam's online event booking platform. As a group of passionate students from the University of Melbourne, we've developed this application to streamline the process of booking live music events across Australia. Inspired by established services like Ticketek, our platform is designed to simplify the booking experience, making it both efficient and user-friendly.
 
-## SWEN90007 Project - Part 2 Deliverable
+## Key Features
 
-This part focuses on the design and implementation of our app based on the Application Domain and the use cases from Part 1. The application is designed considering single-user access, thus avoiding concurrent issues for now.
-
-Incorporated Patterns:
-- Domain model
-- Data mapper
-- Unit of work
-- Lazy load
-- Identity field
-- Foreign key mapping
-- Association table mapping
-- Embedded value
-- Inheritance patterns (Specific pattern used: [Specify the inheritance pattern you've used])
-- Authentication and Authorization (using [mention the library/framework])
+- User Registration and Authentication: Secure login/logout functionality.
+- Administrator Role: Administrators can manage venues, view customer profiles, and oversee bookings.
+- Event Planner Role: Event planners have the ability to create, manage, and co-manage musical events. They can also handle bookings and collaborate with other planners.
+- Customer Role: Customers can search for events and book tickets as long as they are available.
 
 ## Deployment
 
-- **Frontend**: [Render Frontend Deployment](https://musicbandteam-frontend.onrender.com)
-- **Backend**: [Render Backend Deployment](https://event-backend-e7yb.onrender.com/event-backend)
+- **Link To Website**: [Click Here](https://ticketbookingweb.onrender.com):sparkles:
+
+**Note:** The application is hosted on Render. Users may experience a "Not Found" error during login authentication or delays during the initial request. These are known issues and typically resolve by revisiting the homepage.
 
 ## Repository Structure
 
 ```
-├── docs/                   # Documentation (Project reports, minutes, and data samples)
-│   ├── part1/              # Part 1 report
-│   ├── part2/              # Part 2 report - Software Architecture Design (SAD)
-│   ├── part3/              # Part 3 report
-│   ├── part4/              # Part 4 report
-│   └── data-samples/       # Data samples and test case instructions
-├── src/                    # Source code
+├── event-app/              # Frontend developed with React(JavaScript)
+│   ├── src/
+|
+├── event-backend/          # Backend developed with Java
 └── README.md               # Project README file
 ```
 
-## Database Samples
+## Project Architecture
 
-To simplify testing for our stakeholders, our deployed app includes a populated database filled with realistic data samples essential for testing the system. For a detailed breakdown of the data and instructions on how to use it, refer to our [Data Samples Document](docs/data-samples/Data_Samples_Document.md) within the `docs/data-samples/` directory.
+**Class Diagram**(![Board overview](https://github.com/TBPlatform/TicketBookingWeb/blob/main/resource/Diagram.png))
 
-- **docs/**: This directory houses all the project documentation, including reports and meeting minutes. We have organized it into subfolders for each part of the project to maintain clarity and organization.
+**Design Patterns Employed**
 
-  - **part1/**: Part 1 report, which includes the project overview, application domain, use case diagram, and simplified use case descriptions.
+- **Data Mapper:** To decrease coupling between our domain model and the database itself, we implemented data mappers for each object in the business domain. All object mappers extend this AbstractMapper and, depending on their relevant fields, implement the helper functions for the key operations differently.
 
-  - **part2/**: Part 2 report, which covers the architectural design, system components, and technology stack.
+- **Unit Of Work:** Each time that our system runs a transaction, any relevant objects are stored in the UnitOfWork class.
 
-  - **part3/**: Part 3 report, containing the implementation details, challenges faced, and solutions applied.
+- **Lazy Load:** We implemented the lazy load pattern for the Section data within an EventSection, as often it is unnecessary for it to be loaded when Users are requesting event data. It allows to query the database if necessary. It is then up to our Logic classes to determine if the unloaded information is necessary or not.
 
-  - **part4/**: Part 4 report, showcasing the testing procedures, test results, and overall project evaluation.
-
-  - **data-samples/**: This subfolder contains the necessary data samples (inputs) used to simulate and demonstrate our application's functionalities during testing and development.
-
-- **src/**: This directory contains the source code of our online event booking application. It comprises various modules, components, and configurations required for the application's functionality.
-
-- **README.md**: This is the main README file you are currently reading. It provides an overview of the repository structure, introduces the project, and serves as a guide for contributors and users.
-
-We hope you find our project repository organized and user-friendly. If you have any questions or feedback, feel free to reach out to us. Thank you for your interest in our Music Events System project!
+- **Authentication and Authorization:** Since our application is implemented as separate frontend and backend components, we utilised the Java JWT library to generate JSON Web Tokens upon a frontend client’s login, so that the frontend can use them to authenticate itself on our Spring Security-managed backend, and receive authorization to send requests to routes that require certain tier/s of access.
 
 ## Part 3 - Concurrency Management
 
@@ -69,44 +50,30 @@ As a part of our SWEN90007 project, this section deals with concurrency issues t
 
 ### Concurrency Solutions
 
-* **Issue 1: Multiple Ticket Bookings**  
-  * Solution: Optimistic Online Locks  
-  * Testing: Simulated multiple users trying to purchase the same ticket.
+- **Issue 1: Multiple Ticket Bookings**
 
-* **Issue 2: Multiple Event Management**  
-  * Solution: Optimistic Online Locks  
-  * Testing: Simulated multiple event planners editing the same event.
+  - Solution: Optimistic Online Locks
+  - Testing: Simulated multiple users trying to purchase the same ticket.
 
-* **Issue 3: Multiple Venue Editing Management**  
-  * Solution: Permistic Online Locks  
-  * Testing: Simulated one admin view and editing the same venue.
+- **Issue 2: Multiple Event Management**
 
-A comprehensive report detailing each concurrency issue, our chosen solutions, sequence diagrams, and test results can be found in `docs/part3`.
+  - Solution: Optimistic Online Locks
+  - Testing: Simulated multiple event planners editing the same event.
 
-## Deployment Links
+- **Issue 3: Multiple Venue Editing Management**
+  - Solution: Permistic Online Locks
+  - Testing: Simulated one admin view and editing the same venue.
 
-- **Frontend**: [Click Here](https://musicbandteam-frontend.onrender.com)
-- **Backend**: [Click Here](https://event-backend-e7yb.onrender.com/event-backend)
+## Team Member
 
-## Testing
+[Jade](https://github.com/Xi3xi)
+[Jan](https://github.com/JanZhang666)
+[Vivien](https://github.com/vguo2037)
 
-For the third phase of our project, we have tagged our repository with `SWEN90007_2023_Part3_MusicBandTeam`. Use this tag to review the specific state of the project for this deliverable.
+**Credentials**:
 
-### Preloaded Database
-
-Our application includes a preloaded database with realistic data samples essential for testing. To understand our data structure and samples, please refer to `docs/data-samples`.
-
-**Credentials**:  
-- **Administrator**:  
+- **Administrator**:
   - Username: admin@email.com
   - Password: admin
 
 Detailed data samples can be found [here](docs/data-samples).
-
-## Getting Started
-
-1. Clone this repository.
-2. Navigate to the `frontend` directory.
-3. Run `npm install` to install frontend dependencies.
-4. Run `npm start` to start the frontend development server.
-
