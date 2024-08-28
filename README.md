@@ -66,9 +66,9 @@ As a part of our SWEN90007 project, this section deals with concurrency issues t
 
 ## Team Member
 
-[Jade](https://github.com/Xi3xi)
-[Jan](https://github.com/JanZhang666)
-[Vivien](https://github.com/vguo2037)
+- [Jade](https://github.com/Xi3xi)
+- [Jan](https://github.com/JanZhang666)
+- [Vivien](https://github.com/vguo2037)
 
 **Credentials**:
 
